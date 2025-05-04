@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amber - Genshin Impact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #F5F3EB;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .banner {
+      background: url('images/monstadt.jpg') center/cover no-repeat;
+      position: relative;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .banner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .banner h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .section-title {
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .info-img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+    }
+
+    .custom-navbar {
+      display: flex;
+      justify-content: center;
+      background-color: whitesmoke;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .custom-navbar a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: darkgray;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 10px 15px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .custom-navbar a:hover {
+      color: #d4af37;
+      text-shadow: 0px 0px 10px rgba(255, 223, 96, 0.8);
+    }
+
+    .card {
+      border: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease-in-out;
+      border-radius: 10px;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-img-top {
+      height: 80px;
+      object-fit: contain;
+    }
+
+   section {
+      margin: 60px auto;
+      padding: 40px;
+      background: #f9f9f9;
+      border-radius: 22px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+      max-width: 1100px;
+    }
+
+    #sidebar {
+      position: sticky;
+      top: 80px;
+      padding: 20px;
+      background: #fffdf5;
+      border-right: 1px solid #ddd;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .noelle-info-box {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.noelle-info-box .row {
+  margin-bottom: 6px;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="custom-navbar">
+    <a href="#overview">Overview</a>
+    <a href="#lore">Lore</a>
+    <a href="#talents">Talents</a>
+    <a href="#constellations">Constellations</a>
+    <a href="#demo">Gallery</a>
+  </div>
+  <header class="banner">
+    <h1 class="display-4"><strong>Amber</strong></h1>
+  </header>
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <aside class="col-md-3 d-none d-md-block" id="sidebar">
+        <div class="text-center p-3">
+          <img src="images/Character_Amber_Full_Wish.jpg" class="img-fluid rounded-circle mb-3" alt="Noelle Portrait">
+          <h5>Amber</h5>
+          <p class="text-muted">Pyro | Bow</p>
+        </div>
+        <div class="noelle-info-box mt-3">
+  <div class="row">
+    <div class="col-6"><strong>Quality</strong></div>
+    <div class="col-6 text-end text-warning">★★★★</div>
+  </div>
+  <div class="row">
+    <div class="col-6"><strong>Weapon</strong></div>
+    <div class="col-6 text-end">Bow</div>
+  </div>
+  <div class="row">
+    <div class="col-6"><strong>Element</strong></div>
+   <div class="col-6 text-end" style="color: #ff4500;">Pyro</div>
+  </div>
+  <div class="row">
+    <div class="col-6"><strong>Model Type</strong></div>
+    <div class="col-6 text-end">Medium Female</div>
+  </div>
+  <hr>
+  <div class="text-center fw-bold mb-2">Character Roles</div>
+  <div class="d-flex justify-content-around">
+    <span>🛡️ Off-Field</span>
+    <span>⚔️ DPS</span>
+  </div>
+</div>
+      </aside>
+      <main class="col-md-9">
+       <section id="overview">
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <img src="images/Amber.jpg" alt="Amber Portrait" class="info-img">
+    </div>
+    <div class="col-md-8">
+      <h2 class="section-title">Overview</h2>
+      <p>Amber is a 4-star Pyro character from Mondstadt and the last remaining Outrider of the Knights of Favonius. Known for her infectious enthusiasm and fierce loyalty, she’s always the first to volunteer for a mission — no matter how big or small. Her positive energy and boundless determination make her a beloved figure both within the Knights and among the citizens she protects.</p>
+      <p>As a bow-wielder blessed with the Pyro element, Amber excels at ranged combat and elemental reactions. Her skillset is great for crowd control and applying consistent Pyro damage, using her trusty Baron Bunny decoy to distract enemies and unleashing fiery volleys with her Elemental Burst. While often seen as a starting character, Amber’s true value lies in how effectively she supports her team when built properly.</p>
+      <p>Amber is especially helpful for beginners, offering easy access to Pyro damage, gliding tutorials, and exploration mechanics. With investment in constellations and gear, she can be transformed into a reliable support or even a burst damage dealer. Whether helping newcomers learn the ropes or assisting veterans in elemental setups, Amber proves that heart, courage, and a bit of fire go a long way.</p>
+    </div>
+  </div>
+</section>
+
+       <section id="demo" class="text-center">
+  <h2 class="section-title">Character Demo</h2>
+  <div class="ratio ratio-16x9" style="max-width: 900px; margin: auto;">
+    <iframe 
+      src="https://www.youtube.com/embed/ZzcUoAwYWU8?autoplay=1&mute=1&playsinline=1" 
+      title="Amber Character Demo" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<section id="lore">
+  <h2 class="section-title">Lore</h2>
+  <p>Amber is the last remaining Outrider of the Knights of Favonius — a title she carries with pride and unrelenting enthusiasm. In a city known for its free-spirited residents, Amber stands out for her relentless energy, boundless optimism, and unwavering dedication to protecting Mondstadt. Whether it’s gliding over cliffs to help a stranded traveler or personally escorting visitors through the city gates, she tackles every duty with a cheerful heart and a can-do attitude.</p>
+
+  <p>Though often underestimated, Amber’s Pyro Vision reflects her fiery spirit and determination. She earned it not through a climactic battle or moment of desperation, but through her deep-seated desire to help others and prove herself. Pyro represents passion and drive — qualities that Amber embodies with every arrow she lets fly. Whether using Baron Bunny to distract enemies or igniting a rain of flaming arrows with Fiery Rain, she turns every challenge into an opportunity to shine.</p>
+
+  <p>Amber’s exploits are the stuff of lighthearted legend. She once chased down a group of hilichurls for hours across the plains, only to return with their stolen supplies and an even wider smile. She’s also responsible for organizing Mondstadt’s gliding exams, and is infamous for enforcing the city’s gliding rules with almost comical strictness — having once fined Kaeya for a mid-air stunt, much to his dismay.</p>
+
+  <p>While some see her as overly enthusiastic or scatterbrained, those who know her best understand the depth of her courage and loyalty. Jean relies on her as a trusted scout, Lisa finds her energy refreshing, and even Diluc, often stern and aloof, acknowledges her value as a dependable ally. Amber never lets criticism get her down. Instead, she works harder, aiming to be the best she can be — not for glory, but because she truly believes in the ideals of the Knights of Favonius.</p>
+
+  <p>Among Mondstadt’s youth, Amber is a beloved figure — a hero who proves that one doesn’t need immense power to make a difference. Her flame may burn quietly compared to others, but it is constant, warm, and unwavering. In the hearts of the people she protects, Amber isn’t just an Outrider — she’s the spark of hope and courage that lights the way, even when the winds blow cold.</p>
+</section>
+
+       <section id="talents">
+  <h2 class="section-title text-center mb-4">Talents</h2>
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/BowPyro.jpg" alt="Skill Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">Sharpshooter</h5>
+            <p class="card-text">Normal Attack: Performs up to 5 consecutive shots with a bow. Perform a more precise Aimed Shot with increased DMG.
+While aiming, flames will accumulate on the arrowhead. A fully charged flaming arrow will deal Pyro DMG</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Talent_Explosive_Puppet.jpg" alt="Skill Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">Explosive puppet</h5>
+            <p class="card-text">The ever-reliable Baron Bunny takes the stage.When destroyed or when its timer expires, Baron Bunny explodes, dealing AoE Pyro DMG.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Talent_Fiery_Rain.jpg" alt="Skill Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">Fiery Rain</h5>
+            <p class="card-text">Fires off a shower of arrows, dealing continuous AoE Pyro DMG.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="constellations">
+  <h2 class="section-title text-center mb-4">Constellations</h2>
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Talent_Fiery_Rain (1).jpg" alt="Constellation Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">I - One Arrow to Rule Them All</h5>
+            <p class="card-text">Fires 2 arrows per Aimed Shot. The second arrow deals 20% of the first arrow's damage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Constellation_Bunny_Triggered.jpg" alt="Constellation Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">II - Bunny Triggered</h5>
+            <p class="card-text">Baron Bunny’s explosion increases Amber's ATK by 20% for 10s.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Constellation_It_Burns21.jpg" alt="Constellation Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">III - It Burns!</h5>
+            <p class="card-text">Increases the level of Fiery Rain by 3. Maximum upgrade level is 15.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Constellation_It27s_Not_Just_Any_Doll....jpg" alt="Constellation Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">IV - It's Not Just Any Doll...</h5>
+            <p class="card-text">Baron Bunny gains 200% additional ATK based on Amber's ATK.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Constellation_It27s_Baron_Bunny21.jpg" alt="Constellation Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">V - It's Baron Bunny!</h5>
+            <p class="card-text">Increases the level of Explosive Puppet by 3. Maximum upgrade level is 15.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Constellation_Wildfire.jpg" alt="Constellation Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">VI - Wildfire</h5>
+            <p class="card-text">Fiery Rain increases all party members' Movement SPD and ATK by 15% for 10s.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> 
+</section>
+<section id="build" class="text-center">
+  <h2 class="section-title mb-4">Build Recommendations</h2>
+  <div class="row">
+    <!-- Main DPS Amber -->
+    <div class="col-md-4 mb-4">
+      <div class="card p-3 h-100">
+        <h5 class="card-title">🏹 Main DPS Amber</h5>
+        <ul class="list-unstyled text-start">
+          <li><strong>Weapon:</strong> Skyward Harp / Prototype Crescent</li>
+          <li><strong>Artifacts:</strong>
+            <ul>
+              <li>4-pc <em>Wanderer's Troupe</em> (charged attack & EM bonus)</li>
+            </ul>
+          </li>
+          <li><strong>Stats Priority:</strong>
+            <ul>
+              <li>ATK% > CRIT Rate / CRIT DMG > Pyro DMG Bonus</li>
+            </ul>
+          </li>
+          <li><strong>Sub-stats:</strong> CRIT Rate, CRIT DMG, ATK%</li>
+          <li><strong>Team Comp:</strong> Xingqiu, Sucrose, Bennett</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Support Amber -->
+    <div class="col-md-4 mb-4">
+      <div class="card p-3 h-100">
+        <h5 class="card-title">🔥 Burst Support Amber</h5>
+        <ul class="list-unstyled text-start">
+          <li><strong>Weapon:</strong> Elegy for the End / Favonius Warbow</li>
+          <li><strong>Artifacts:</strong>
+            <ul>
+              <li>4-pc <em>Noblesse Oblige</em> (burst DMG + team buff)</li>
+            </ul>
+          </li>
+          <li><strong>Stats Priority:</strong>
+            <ul>
+              <li>Energy Recharge > Pyro DMG Bonus > CRIT Rate</li>
+            </ul>
+          </li>
+          <li><strong>Sub-stats:</strong> ER, CRIT Rate, ATK%</li>
+          <li><strong>Team Comp:</strong> Xiangling, Bennett, Mona</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Reaction / Overload Build -->
+    <div class="col-md-4 mb-4">
+      <div class="card p-3 h-100">
+        <h5 class="card-title">⚡ Overload Fun Build</h5>
+        <ul class="list-unstyled text-start">
+          <li><strong>Weapon:</strong> The Stringless / Slingshot</li>
+          <li><strong>Artifacts:</strong>
+            <ul>
+              <li>4-pc <em>Crimson Witch of Flames</em> (boosts Pyro & Overload reactions)</li>
+            </ul>
+          </li>
+          <li><strong>Stats Priority:</strong>
+            <ul>
+              <li>Elemental Mastery > ATK% > CRIT Rate</li>
+            </ul>
+          </li>
+          <li><strong>Sub-stats:</strong> EM, ATK%, CRIT DMG</li>
+          <li><strong>Team Comp:</strong> Fischl, Beidou, Kazuha</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer style="background: #2d2d2d; color: #ccc; padding: 40px 0; margin-top: 60px;">
+  <div class="container text-center">
+    <h3 id="Socials" style="color: #fff; font-size: 24px; margin-bottom: 15px;">Genshin Impact Socials</h3>
+    <p style="font-size: 16px; margin-bottom: 10px; color: #ccc;">Follow for more updated contents:</p>
+    <p>
+      <a href="https://www.instagram.com/genshinimpact/?hl=en" style="color: #fff; text-decoration: none;">Instagram</a> |
+      <a href="https://x.com/GenshinImpact?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" style="color: #fff; text-decoration: none;">Twitter</a> |
+      <a href="https://www.facebook.com/Genshinimpact/" style="color: #fff; text-decoration: none;">Facebook</a>
+    </p>
+    <p style="font-size: 14px; color: #888;">&copy; 2025 Genshin Impact. All rights reserved.</p>
+  </div>
+</footer>
+
+

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Genshin Impact</title>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .header {
+            color: #fffaf0;
+            padding: 70px;
+            font-size: 70px;
+            font-weight: bold;
+            text-align: center;
+            background-image: url('images/teyvat.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: whitesmoke;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: darkgray;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar a:hover {
+            color: #d4af37;
+            text-shadow: 0px 0px 10px rgba(255, 223, 96, 0.8);
+        }
+
+        .page-layout {
+            display: flex;
+            height: auto;
+            min-height: calc(100vh - 200px); /* Adjust based on header+footer */
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 10px 10px;
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        section {
+            background: #f9f9f9;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 60px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+            max-width: 900px;
+
+        }
+
+        .intro-img {
+            width: 400%;
+            max-width: 300px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .ss1-img {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 14px;
+        }
+
+        .introduction h2 {
+            font-size: 20px;
+            text-align: left;
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            color: #222;
+        }
+
+        .introduction p {
+            font-size: 15px;
+            text-align: justify;
+            margin-bottom: 20px;
+            line-height: 2;
+            color: #444;
+        }
+
+        .characters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .character-card {
+            display: block;
+            background-color: white;
+            margin: 10px;
+            padding: 5px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(255, 223, 96, 0.8);
+            width: 250px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .character-card img {
+            width: 90%;
+            border-radius: 10px;
+        }
+
+        .character-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 223, 90, 1);
+        }
+
+        .sidebar-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .creator-card,
+        .video-card {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .creator-card:hover,
+        .video-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .creator-card img,
+        .video-embed {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .creator-info h4,
+        .video-info h4 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .creator-info p,
+        .video-info p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .footer {
+            background: linear-gradient(to right, #1a1a1a, #333);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: gold;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-shadow: 0px 0px 5px rgba(255, 223, 96, 0.8);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Initial Guide to Free Characters<br />
+        <small>Genshin Impact</small>
+    </div>
+
+  <div class="navbar">
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#Socials">Social</a>
+</div>
+
+
+    <div class="page-layout">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+    <h3 class="sidebar-title">Top Genshin Content Creators</h3>
+
+    <a href="https://www.twitch.tv/tuonto" target="_blank">
+        <div class="creator-card">
+            <img src="images/tuonto.jpg" alt="Creator1" />
+            <div class="creator-info">
+                <h4>Tuonto</h4>
+                <p>Twitch</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="https://www.youtube.com/@JavaTheCup" target="_blank">
+        <div class="creator-card">
+            <img src="images/java.jpg" alt="Creator2" />
+            <div class="creator-info">
+                <h4>JavaTheCup</h4>
+                <p>Youtube</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="https://www.twitch.tv/antonychenn" target="_blank">
+        <div class="creator-card">
+            <img src="images/ant.png" alt="Creator3" />
+            <div class="creator-info">
+                <h4>antonychenn</h4>
+                <p>Twitch</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="https://www.twitch.tv/mistahfeet" target="_blank">
+        <div class="creator-card">
+            <img src="images/feet.jpg" alt="Creator3" />
+            <div class="creator-info">
+                <h4>Mistahfeet</h4>
+                <p>Twitch</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="https://www.twitch.tv/zy0xxx" target="_blank">
+        <div class="creator-card">
+            <img src="images/zyox.png" alt="Creator3" />
+            <div class="creator-info">
+                <h4>Zyox</h4>
+                <p>Twitch</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="https://www.twitch.tv/thejonathon" target="_blank">
+        <div class="creator-card">
+            <img src="images/john.jpg" alt="Creator3" />
+            <div class="creator-info">
+                <h4>Thejonathon</h4>
+                <p>Twitch</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="https://www.twitch.tv/sevy_plays" target="_blank">
+        <div class="creator-card">
+            <img src="images/sev.png" alt="Creator3" />
+            <div class="creator-info">
+                <h4>Sevy_Plays</h4>
+                <p>Twitch</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="https://www.twitch.tv/doro44" target="_blank">
+        <div class="creator-card">
+            <img src="images/doro.png" alt="Creator3" />
+            <div class="creator-info">
+                <h4>doro44</h4>
+                <p>Twitch</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="https://www.twitch.tv/asianguystream" target="_blank">
+        <div class="creator-card">
+            <img src="images/asian.jpg" alt="Creator3" />
+            <div class="creator-info">
+                <h4>AsianGuyStream</h4>
+                <p>Twitch</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="https://www.youtube.com/@Minsleif" target="_blank">
+        <div class="creator-card">
+            <img src="images/min.jpg" alt="Creator3" />
+            <div class="creator-info">
+                <h4>Minsleif</h4>
+                <p>Youtube</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="https://www.twitch.tv/thegenshinscientist" target="_blank">
+        <div class="creator-card">
+            <img src="images/tgs.jpg" alt="Creator3" />
+            <div class="creator-info">
+                <h4>The Genshin Scientist</h4>
+                <p>Twitch</p>
+            </div>
+        </div>
+    </a>
+</div>
+
+        <!-- Main Content Area -->
+        <div id="about" class ="content-area">
+            <div class="content-wrapper">
+                <section class="introduction">
+    <img src="images/genshin-logo.png" alt="Genshin Impact Logo" class="intro-img">
+    <h2>Introduction</h2>
+    <p>
+        Genshin Impact is a critically acclaimed open-world action role-playing game developed and published by HoYoverse (formerly miHoYo). Since its global release in September 2020, the game has captivated millions of players around the world with its breathtaking visuals, dynamic combat system, immersive storytelling, and expansive worldbuilding. Designed with an anime-inspired art style and a richly orchestrated soundtrack, Genshin Impact combines traditional RPG elements with the freedom of open exploration, drawing players into the magical continent of Teyvat.
+    </p>
+    <p>
+        In Genshin Impact, players take on the role of the mysterious Traveler, a being from another world who has been separated from their twin sibling by an unknown force. As the Traveler journeys across the seven nations of Teyvat in search of their lost sibling, they unravel the secrets behind this world’s gods, elemental powers, and political factions. Each region in the game is inspired by real-world cultures and governed by one of the seven Archons, deities who represent different elements and philosophies.
+    </p>
+    <img src="images/ss1.jpg" alt="Genshin Impact Exploration" class="ss1-img">
+    <p>
+        One of the game's most defining features is its elemental combat system. Characters wield one of seven elements—Anemo (Wind), Geo (Earth), Electro (Lightning), Dendro (Nature), Hydro (Water), Pyro (Fire), and Cryo (Ice)—and players must strategically combine these elements to overcome enemies, solve puzzles, and manipulate the environment. As players collect a growing roster of unique characters through quests and the game’s gacha-style “Wish” system, they can build versatile teams and experiment with powerful synergies.
+    </p>
+    <img src="images/ss2.jpg" alt="Genshin Combat System" class="ss1-img">
+    <p>
+        Teyvat itself is vast and ever-expanding. From the wind-swept plains of Mondstadt to the mountainous terrain of Liyue, the electrified islands of Inazuma, the verdant rainforests of Sumeru, and the snowy wastes of Dragonspine, each region is packed with hidden treasures, mythical creatures, challenging domains, and complex lore. Future updates promise to unveil even more regions—like Natlan and Snezhnaya—as HoYoverse continues to build upon the game’s long-term roadmap.
+    </p>
+    <p>
+        Beyond its gameplay mechanics, Genshin Impact fosters a passionate and diverse community. Regular events, collaborations, fan art, cosplay, and community content help fuel the game’s popularity. With ongoing updates, new story chapters, character releases, and cross-platform play across mobile, PC, PlayStation, and now cloud gaming services, Genshin Impact continues to redefine what free-to-play gaming can offer.
+    </p>
+</section>
+                <h2 id="gallery" id="starter-characters">Starting Free Characters</h2>
+                <div class="characters">
+                    <a href="noelle.html" class="character-card"><img src="images/noelle.jpg" alt="Noelle"/><h3>Noelle</h3><p>Geo Defender</p></a>
+                    <a href="amber.html" class="character-card"><img src="images/Amber.jpg" alt="Amber"/><h3>Amber</h3><p>Outrider of Mondstadt</p></a>
+                    <a href="kaeya.html" class="character-card"><img src="images/kaeya.jpg" alt="Kaeya"/><h3>Kaeya</h3><p>Cavalry Captain</p></a>
+                    <a href="lisa.html" class="character-card"><img src="images/lisa.jpg" alt="Lisa"/><h3>Lisa</h3><p>Electro Librarian</p></a>
+                    <a href="xiangling.html" class="character-card"><img src="images/xiangling.jpg" alt="Xiangling"/><h3>Xiangling</h3><p>Chef & Pyro Warrior</p></a>
+                    <a href="collei.html" class="character-card"><img src="images/collei.jpg" alt="Collei"/><h3>Collei</h3><p>Dendro Archer</p></a>
+                    <a href="lynette.html" class="character-card"><img src="images/lynette.jpg" alt="Lynette"/><h3>Lynette</h3><p>Hearth Magician</p></a>
+                    <a href="kachina.html" class="character-card"><img src="images/kachina.jpg" alt="Kachina"/><h3>Kachina</h3><p>Uthabiti Warrior</p></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="sidebar">
+            <h3 class="sidebar-title">Genshin Impact Trailers</h3>
+            <div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/TAlKhARUcoY" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>Teyvat Chapter</h4>  
+                </div>
+            </div>
+            <div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/TmaAOV4SJNQ"
+                frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>A Winter Night's Lazzo</h4>
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/tN5JACOEJFM" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>The Song Burning in the Embers</h4>  
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/_nky3f7_0TE" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>Ultimate Sacrifice</h4>  
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/kglEsR7bqAY" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>La vaguelette </h4>  
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/_RAhrisU6Mc" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>Sinner's Finale</h4>  
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/rFJOBl0MHts" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>The Time Has Yet to Come</h4>  
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/J4uJsK1gNKg" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>Clash of Frost and Flame</h4>  
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/2o2d7Nr_SN8" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>Memories of This Life</h4>  
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/EN79SfbcvIE" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>Furina: All the World's a Stage</h4>  
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/T5-YMslEmxw" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>The Road Not Taken</h4>  
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/j3661mhHfvY" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>Passing Memories</h4>  
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/o1EEvbQXe6Y" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4> Unofficial Operation</h4>  
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/mvrW4aKwAXw" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4>Judgment of Euthymia</h4>  
+                </div>
+            </div><div class="video-card">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/SO__VQZirJ4" frameborder="0" allowfullscreen></iframe>
+                <div class="video-info">
+                    <h4> We Will Be Reunited </h4>  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h3 id="Socials">Genshin Impact Socials</h3>
+        <p>Follow for more updated contents:</p>
+        <p><a href="https://www.instagram.com/genshinimpact/?hl=en">Instagram</a> | <a href="https://x.com/GenshinImpact">Twitter</a> | <a href="https://www.facebook.com/Genshinimpact/">Facebook</a></p>
+        <p>&copy; 2025 Genshin Impact. All rights reserved.</p>
+    </div>
+</body>
+</html>

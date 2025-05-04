@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kachina - Genshin Impact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F5F3EB;
+      font-family: 'Open Sans', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .banner {
+      background: url('images/natlan.jpg') center/cover no-repeat;
+      position: relative;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+    .banner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+    .banner h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+    .section-title {
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .info-img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+    }
+    .custom-navbar {
+      display: flex;
+      justify-content: center;
+      background-color: whitesmoke;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .custom-navbar a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: darkgray;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 10px 15px;
+      transition: all 0.3s ease-in-out;
+    }
+    .custom-navbar a:hover {
+      color: #d4af37;
+      text-shadow: 0px 0px 10px rgba(255, 223, 96, 0.8);
+    }
+    .card {
+      border: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease-in-out;
+      border-radius: 10px;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card-img-top {
+      height: 80px;
+      object-fit: contain;
+    }
+   section {
+      margin: 60px auto;
+      padding: 40px;
+      background: #f9f9f9;
+      border-radius: 22px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+      max-width: 1100px;
+    }
+    #sidebar {
+      position: sticky;
+      top: 80px;
+      padding: 20px;
+      background: #fffdf5;
+      border-right: 1px solid #ddd;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .lynette-info-box {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.lynette-info-box .row {
+  margin-bottom: 6px;
+}
+  </style>
+</head>
+<body>
+  <div class="custom-navbar">
+    <a href="#overview">Overview</a>
+    <a href="#lore">Lore</a>
+    <a href="#talents">Talents</a>
+    <a href="#constellations">Constellations</a>
+    <a href="#demo">Gallery</a>
+  </div>
+  <header class="banner">
+    <h1 class="display-4"><strong>Kachina</strong></h1>
+  </header>
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <aside class="col-md-3 d-none d-md-block" id="sidebar">
+        <div class="text-center p-3">
+          <img src="images/Character_Kachina_Full_Wish.jpg" class="img-fluid rounded-circle mb-3" alt="Noelle Portrait">
+          <h5>Lynette</h5>
+          <p class="text-muted">Geo | Polearm</p>
+        </div>
+        <div class="noelle-info-box mt-3">
+  <div class="row">
+    <div class="col-6"><strong>Quality</strong></div>
+    <div class="col-6 text-end text-warning">★★★★</div>
+  </div>
+  <div class="row">
+    <div class="col-6"><strong>Weapon</strong></div>
+    <div class="col-6 text-end">Sword</div>
+  </div>
+  <div class="row">
+    <div class="col-6"><strong>Element</strong></div>
+   <div class="col-6 text-end" style="color:#DCA33E;">Geo</div>
+  </div>
+  <div class="row">
+    <div class="col-6"><strong>Model Type</strong></div>
+    <div class="col-6 text-end">Short Female</div>
+  </div>
+  <hr>
+  <div class="text-center fw-bold mb-2">Character Roles</div>
+  <div class="d-flex justify-content-around">
+   <span>🪨 Geo Support</span>
+   <span>🎯 Sub-DPS</span>
+  </div>
+</div>
+      </aside>
+      <main class="col-md-9">
+       <section id="overview">
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <img src="images/kachina.jpg" alt="Amber Portrait" class="info-img">
+    </div>
+    <div class="col-md-8">
+     <h2 class="section-title">Overview</h2>
+<p>Kachina is a 4-star Geo character known for her unshakable presence and steady support in battle. Hailing from a region steeped in tradition and resilience, she embodies the enduring strength of the earth itself. Calm and grounded, Kachina brings both poise and tactical utility to any team she joins.</p>
+<p>Wielding a polearm and infused with the Geo element, Kachina specializes in providing consistent off-field support and dealing sustained damage over time. Her Elemental Skill summons a sturdy construct that draws enemy attention and generates shields, while her Elemental Burst unleashes a wave of Geo energy that fortifies allies and disrupts enemies with AoE Geo damage.</p>
+<p>Kachina thrives in teams that benefit from crystalized reactions and defensive stability. With proper investment in DEF and Energy Recharge, she becomes a reliable sub-DPS and support unit. Whether anchoring a defensive line or setting up Geo resonance, Kachina proves that quiet strength and steadfast resolve can shape the battlefield as surely as stone.</p>
+</section>
+       <section id="demo" class="text-center">
+  <h2 class="section-title">Character Demo</h2>
+  <div class="ratio ratio-16x9" style="max-width: 900px; margin: auto;">
+    <iframe 
+      src="https://www.youtube.com/embed/uKr_9h79yf0?autoplay=1&mute=1&playsinline=1" 
+      title="Kachina Character Demo" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+<section id="lore">
+  <h2 class="section-title">Lore</h2>
+  <p>Kachina is a steadfast guardian from a distant, mountainous region, where ancient stone temples and enduring traditions shape every soul. Known for her composed demeanor and quiet vigilance, she carries herself with the dignity of one who listens more than she speaks. Where others rush forward, Kachina stands firm — the immovable foundation her allies rely on.</p>
+  <p>Gifted with a Geo Vision, Kachina draws strength from the land itself. Her fighting style is deliberate and precise, marked by summoned constructs, protective barriers, and powerful bursts of crystallized energy. Each strike is purposeful, each movement calculated — a reflection of her belief that true strength is unshaken, even in chaos.</p>
+  <p>Kachina’s past is carved from hardship. Raised amid the rubble of a fallen order, she learned early on to find power in stillness and patience. Rather than seek fame or recognition, she chooses to uphold the quiet legacy of those who came before her, acting as a living monument to forgotten oaths and ancient resilience.</p>
+  <p>While many heroes shine in the spotlight, Kachina works in the silence between battles — repairing what is broken, shielding those in need, and ensuring the world does not crumble under its own weight. Her loyalty is unyielding, and her presence commands respect, not through volume, but through unwavering constancy.</p>
+  <p>To know Kachina is to understand that strength need not shout to be heard. Like the mountains she hails from, she is timeless, grounded, and quietly formidable — a sentinel of stone in a world ever shifting.</p>
+</section>
+<section id="talents">
+  <h2 class="section-title text-center mb-4">Talents</h2>
+  <div class="row">
+    <!-- Normal Attack -->
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Polearm_Geo.jpg" alt="Cragbiter Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">Cragbiter</h5>
+            <p class="card-text">
+              <strong>Normal Attack:</strong> Performs up to 4 consecutive spear strikes.<br>
+              <strong>Charged Attack:</strong> Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.<br>
+              <strong>Plunging Attack:</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Talent_Go__Go_Turbo_Twirly_.jpg" alt="Go, Go Turbo Twirly! Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">Go, Go Turbo Twirly!</h5>
+            <p class="card-text">
+              Summons Turbo Twirly. When held and released, Kachina will summon and ride Turbo Twirly, gaining 60 Nightsoul points and entering the Nightsoul's Blessing state. Turbo Twirly can exist independently or be ridden and operated by Kachina. Its various actions consume Nightsoul points, and the state ends when these points are depleted. Turbo Twirly is considered a Geo Construct.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Talent_Time_to_Get_Serious_.jpg" alt="Elemental Burst Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">[Elemental Burst Name]</h5>
+            <p class="card-text">
+              [Elemental Burst Description]
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="constellations">
+  <h2 class="section-title text-center mb-4">Constellations</h2>
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Constellation_Shards_Are_Gems_Too.jpg" alt="Constellation Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">I - Shards Are Gems Too</h5>
+            <p class="card-text">When Kachina mounts or dismounts Turbo Twirly, she absorbs nearby Elemental Shards created by Crystallize. Additionally, when a party member picks up such a Shard, Kachina restores 3 Energy. This effect can be triggered once every 5 seconds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Constellation_Never_Leave_Home_Without._Turbo_Twirly.jpg" alt="Constellation Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">II - Never Leave Home Without… Turbo Twirly</h5>
+            <p class="card-text">When Kachina uses Time to Get Serious!, she regains 20 Nightsoul points. If Turbo Twirly is not already on the field, she automatically enters Nightsoul’s Blessing and summons one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Constellation_Improved_Stabilizer.jpg" alt="Constellation Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">III - Improved Stabilizer</h5>
+            <p class="card-text">Increases the level of Go, Go Turbo Twirly! by 3. Maximum upgrade level is 15.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Constellation_More_Foes__More_Caution.jpg" alt="Constellation Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">IV - More Foes, More Caution</h5>
+            <p class="card-text">When there are 1/2/3/4 or more opponents within the Turbo Drill Field created by Time to Get Serious!, the active character inside the field gains 8%/12%/16%/20% increased DEF respectively.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Constellation_All_I_ve_Collected_Till_Now.jpg" alt="Constellation Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">V - All I’ve Collected Till Now</h5>
+            <p class="card-text">Increases the level of Time to Get Serious! by 3. Maximum upgrade level is 15.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body d-flex align-items-center">
+          <img src="images/Constellation_This_Time__I_ve_Gotta_Win.jpg" alt="Constellation Icon" class="me-3" style="width: 50px; height: 50px;">
+          <div>
+            <h5 class="card-title">VI - This Time, I’ve Gotta Win</h5>
+            <p class="card-text">When a shield on the active character is replaced or destroyed, Kachina deals AoE Geo DMG equal to 200% of her DEF. This effect can be triggered once every 5 seconds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="build" class="text-center">
+  <h2 class="section-title mb-4">Build Recommendations</h2>
+  <div class="row">
+    <!-- Sub-DPS Kachina -->
+    <div class="col-md-4 mb-4">
+      <div class="card p-3 h-100">
+        <h5 class="card-title">⚔️ Sub-DPS Kachina</h5>
+        <ul class="list-unstyled text-start">
+          <li><strong>Weapon:</strong> Favonius Lance / Footprint of the Rainbow / Engulfing Lightning</li>
+          <li><strong>Artifacts:</strong>
+            <ul>
+              <li>4-pc <em>Scroll of the Hero of Cinder City</em> (Enhances Crystallize support)</li>
+            </ul>
+          </li>
+          <li><strong>Stats Priority:</strong>
+            <ul>
+              <li>Energy Recharge > DEF% > CRIT Rate / CRIT DMG</li>
+            </ul>
+          </li>
+          <li><strong>Sub-stats:</strong> Energy Recharge, DEF%, CRIT Rate</li>
+          <li><strong>Team Comp:</strong> Noelle, Albedo, Gorou</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <footer style="background: #2d2d2d; color: #ccc; padding: 40px 0; margin-top: 60px;">
+  <div class="container text-center">
+    <h3 id="Socials" style="color: #fff; font-size: 24px; margin-bottom: 15px;">Genshin Impact Socials</h3>
+    <p style="font-size: 16px; margin-bottom: 10px; color: #ccc;">Follow for more updated contents:</p>
+    <p>
+      <a href="https://www.instagram.com/genshinimpact/?hl=en" style="color: #fff; text-decoration: none;">Instagram</a> |
+      <a href="https://x.com/GenshinImpact?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" style="color: #fff; text-decoration: none;">Twitter</a> |
+      <a href="https://www.facebook.com/Genshinimpact/" style="color: #fff; text-decoration: none;">Facebook</a>
+    </p>
+    <p style="font-size: 14px; color: #888;">&copy; 2025 Genshin Impact. All rights reserved.</p>
+  </div>
+</footer>
+
+
